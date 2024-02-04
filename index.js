@@ -1,7 +1,10 @@
 import express  from "express";
 import dotenv from "dotenv";
+import cors from "cors";
+
 const app = express()
 dotenv.config()
+// app.use(cors())
 
 app.use(express.static('public'))
 
@@ -59,7 +62,7 @@ const dummy = [
   ]
   
 
-app.get('/jokes',(req,res)=>{
+app.get('/api/jokes',(req,res)=>{
     res.json(dummy)
 })
 
